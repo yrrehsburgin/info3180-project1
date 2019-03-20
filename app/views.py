@@ -11,6 +11,7 @@ from flask import render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
 from app.forms import ProfileForm
 from app.models import UserProfile
+import datetime
 
 
 ###
@@ -42,10 +43,11 @@ def profile():
             email = form.email.data
             location = form.location.data
             bio = form.bio.data
+            date = format_date_joined()
             filename = assignPath(form.photo.data)
 
             #create user object and add to database
-            user = UserProfile(fname,lname,gender,email,location,bio, filename)
+            user = UserProfile(fname,lname,gender,email,location,bio,date, filename)
             db.session.add(user)
             db.session.commit()
 
@@ -64,10 +66,21 @@ def assignPath(upload):
     return filename 
 
 
+def format_date_joined():
+    now = datetime.datetime.now() #current date
+    ## Format the date to return only month and year date
+    return now.strftime("%B %d, %Y")
+
 @app.route("/profiles")
 def profiles():
     user_profiles = db.session.query(UserProfile).all()
     return render_template("profiles.html", users=user_profiles)
+    
+
+@app.route("/profile/<userid>")
+def profileId(userid):
+    user = db.session.query(UserProfile).filter_by(id=int(userid)).first()
+    return render_template("display.html", user=user)
     
 # user_loader callback. This callback is used to reload the user object from
 # the user ID stored in the session

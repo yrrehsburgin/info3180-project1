@@ -1,6 +1,25 @@
+
+
 body {
     padding-top: 5rem;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #EBF5FB;
+}
+
+
+.outer {
+  left: 0;
+  margin-left: 200px
+  
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1{
@@ -22,23 +41,35 @@ p{
     font-size: 10px;
 }
 
-input{
+.profinfo input{
     width: 350px;
     display: block;
 }
 
-textarea{
+
+select{
+    width: 350px !important;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.profinfo textarea{
     width: 350px;
     height: 100px;
+    border-radius: 5px;
 }
 
 
-input[type=file]{
-    color: transparent;
+.profinfo input[type=file]{
+    color: black;
+}
+
+button, input{
+    border-radius: 5px;
 }
 
 
-input[type=submit]{
+.profinfo input[type=submit]{
     color: white;
     background-color:  #32CD32;
     border: none;
@@ -49,3 +80,106 @@ input[type=submit]{
     height: 30px;
     margin-top: 10px;
 } 
+
+button[name="view"]{
+    background-color: #7bd417;
+    width: 116px;
+    height: 27px;
+    font-weight: bold;
+    font-size: 11px;
+    margin: 20px 10px 0 0;
+    border: none;
+}
+
+.Colborder{
+    border-top-color:  #1C86EE ;
+    border-top-width: 4px;
+    border-radius: 7px;
+}
+
+
+
+.editImg{
+    border-radius: 10px;
+    padding: 12px 10px 10px 15px;
+    height:200px ;
+}
+
+
+.profile{
+    font-weight: 900;
+    font-size: 14px;
+    margin: 0 0 4px 20px;
+}
+
+.descrip{
+    margin: 0 0 4px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #979a9a;
+
+}
+
+.contain{
+    display: flex;
+    justify-content: center;
+}
+
+
+.image{
+    margin-top: 20px;
+    margin-left: 40px;
+    height: 150px;
+}
+
+.heading{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 3px 38px;
+}
+
+.description{
+    margin: 15px;
+    padding-left: 25px;
+    font-size: 13px;
+} 
+
+
+.edit{
+    font-size: 12px;
+    margin: 0 0 8px 24px;
+    font-weight: bolder;
+}
+
+.bio{
+    font-size: 12px;
+    margin: 0 0 8px 24px;
+}
+
+.centered{
+    text-align: center;
+    padding: 20px 0 0 0 !important;
+}
+
+.no-border{
+    border-top: none !important;
+}
+
+button[name="message"]{
+    background-color: #7bd417 !important;
+    width: 170px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 0 15px 0 0;
+}
+
+button[name="follow"]{
+    width: 170px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 0 0 0 15px;
+}

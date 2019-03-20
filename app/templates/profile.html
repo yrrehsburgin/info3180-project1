@@ -1,40 +1,45 @@
 {% extends "base.html" %}
 
 {% block main %}
+   <div class="outer" style="width: 500px;">
     <h1>Add Profile</h1>
-    <p>Fill in this form to create a user profile.</p>
+    <div class="Colborder middle" id="trial" style="background-color: #fff; padding: 20px 0 20px 40px; ">
+    <div class="inner">
     <form action="{{ url_for('profile') }}" method="post" enctype="multipart/form-data">
         {{ form.csrf_token }}
         <div class="profinfo">
             {{form.firstname.label(class="label")}}
-            {{form.firstname}}
+            {{form.firstname(class="prof_class")}}
         </div>
         <div class="profinfo">
             {{form.lastname.label(class="label")}}
-            {{form.lastname}}
+            {{form.lastname(class="prof_class")}}
         </div>
         <div class="profinfo">
             {{form.gender.label(class="label")}}
-            {{form.gender}}
+            {{form.gender(class="prof_class",default="Select Gender")}}
         </div>
         <div class="profinfo">
             {{form.email.label(class="label")}}
-            {{form.email}}
+            {{form.email(class="prof_class",placeholder="e.g. jdoe@example.com")}}
         </div>
         <div class="profinfo">
             {{form.location.label(class="label")}}
-            {{form.location}}
+            {{form.location(class="prof_class", placeholder="e.g. Kingston, Jamaica")}}
         </div>
         <div class="profinfo">
             {{form.bio.label(class="label")}}
-            {{form.bio}}
+            {{form.bio(class="prof_class")}}
         </div>
         <div class="profinfo">
             {{form.photo.label(class="label")}}
-            {{form.photo}}
+            {{form.photo(class="prof_class")}}
         </div>
         <div class="profinfo">
             {{form.submit}}
         </div>
     </form>
+    </div>
+    </div>
+  </div>
 {% endblock %}
